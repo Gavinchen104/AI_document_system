@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resume–Job Match</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Resume–Job Match</h1>
+    <p class="subtitle">Multi-AI-Agent Document System</p>
+  </header>
+
+  <main>
+    <div class="config">
+      <label>API URL:</label>
+      <input type="text" id="apiUrl" value="http://localhost:8000" placeholder="http://localhost:8000">
+    </div>
+
+    <section class="inputs">
+      <div class="panel">
+        <h2>Resume</h2>
+        <div class="upload-zone" id="resumeZone">
+          <p>Drop PDF/DOCX or click to browse</p>
+          <input type="file" id="resumeFile" accept=".pdf,.docx,.doc" hidden>
+        </div>
+        <p class="or">— or paste text —</p>
+        <textarea id="resumeText" placeholder="Paste resume text here..." rows="6"></textarea>
+      </div>
+      <div class="panel">
+        <h2>Job Description</h2>
+        <textarea id="jobText" placeholder="Paste job description here..." rows="10"></textarea>
+      </div>
+    </section>
+
+    <div class="actions">
+      <button id="matchBtn" disabled>Match</button>
+    </div>
+
+    <section class="result" id="resultSection" hidden>
+      <h2>Result</h2>
+      <div class="score" id="scoreDisplay"></div>
+      <ul class="explanations" id="explanations"></ul>
+      <p class="error" id="resultError" hidden></p>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
